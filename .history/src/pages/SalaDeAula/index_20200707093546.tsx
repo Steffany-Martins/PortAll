@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+
 import { ThemeProvider } from "styled-components";
-import usePersistedState from "../utils/usePersistedState";
+import usePersistedState from "../../utils/usePersistedState";
 
-import light from "../styles/themes/light";
-import dark from "../styles/themes/dark";
+import light from "../../styles/themes/light";
+import dark from "../../styles/themes/dark";
 
-import GlobalStyle from "../styles/global";
-import Header from "./../components/Header";
-import Login from "./Cadastro";
+import GlobalStyle from "../../styles/global";
+import Header from "../../components/Header";
 
-const App = () => {
+import { Box } from "styles.ts";
+const SalaDeAula = () => {
   const [theme, setTheme] = usePersistedState("theme", light);
 
   const toggleTheme = () => {
@@ -20,9 +21,10 @@ const App = () => {
       <div className="App">
         <GlobalStyle />
         <Header toggleTheme={toggleTheme} />
+        <Box></Box>
       </div>
     </ThemeProvider>
   );
 };
 
-export default App;
+export default SalaDeAula;
